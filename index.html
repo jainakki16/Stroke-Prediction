@@ -72,5 +72,130 @@
 </head>
 <body>
     
+  <div class="container">
+    <div class="row">
+      <h2 style="text-align: center;">Stroke Prediction Form</h2>
+    </div>
+    <form action="/result" method="POST">
+      <div class="row">
+        <div class="col-25">
+          <label for="gender">Gender</label>
+        </div>
+        <div class="col-75">
+          <select id="gender" name="gender">
+            <option>--Select--</option>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+            <option value="2">Other</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-25">
+          <label for="age">Age</label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="age" min="1" step="1">
+          
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="hypert">Hypertension</label>
+        </div>
+        <div class="col-75">
+          <select id="hypert" name="hypert">
+            <option>--Select--</option>
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-25">
+          <label for="heart_d">Heart Disease</label>
+        </div>
+        <div class="col-75">
+          <select id="heart_d" name="heart_d">
+            <option>--Select--</option>
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-25">
+          <label for="martial_stat">Marital Status</label>
+        </div>
+        <div class="col-75">
+          <select id="martial_stat" name="martial_stat">
+            <option>--Select (Yes >> Married, No >> Single/Divorce)--</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="w_class">Work Type</label>
+        </div>
+        <div class="col-75">
+          <select id="w_class" name="w_class">
+            <option>--Select--</option>
+            <option value="0">Self-employed</option>
+            <option value="1">Govt_job</option>
+            <option value="2">Never-worked</option>
+            <option value="3">Private</option>
+            <option value="4">children</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="resident">Residence Type</label>
+        </div>
+        <div class="col-75">
+          <select id="resident" name="resident" >
+            <option>--Select--</option>
+            <option value="0">Urban</option>
+            <option value="1">Ruler</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="avg_gl">Average Glucose Level </label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="avg_gl" name="avg_gl" placeholder="btw:[0-300]">
+          
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-25">
+          <label for="c_loss">Body Mass Index (BMI) </label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="c_loss" name="c_loss" placeholder="between:[10-100]">
+          
+        </div>
+      </div>
+  
+      <div class="row" >
+        <input type="submit" value="Submit">
+      </div>
+      
+    </form>
+  
+ 
+  </div>
 </body>
 </html>
