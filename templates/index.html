@@ -1,0 +1,302 @@
+<html>
+
+<head>
+  <style>
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+
+    /* Style the label to display next to the inputs */
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+
+
+    /* Style the container */
+    .container {
+      margin: auto;
+      border-radius: 5px;
+      padding: 40px 40px 10px 40px;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    /* Floating column for labels: 25% width */
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+      font-family: Comic Sans MS;
+      font-size: 16px;
+    }
+
+    /* Floating column for inputs: 75% width */
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .title_container {
+      padding: 30px;
+      position: relative;
+      background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
+      background-size: 500% 500%;
+      animation: change-gradient 10s ease-in-out infinite;
+    }
+
+    @keyframes change-gradient {
+      0% {
+        background-position: 0 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0 50%;
+      }
+    }
+
+    .container-heading {
+      margin: 0;
+    }
+
+    .heading_font {
+      color: #ffffff;
+      font-family: 'Pacifico', cursive;
+      font-size: 35px;
+      font-weight: normal;
+    }
+
+    .description p {
+      color: #ffffff;
+      font-style: italic;
+      font-size: 14px;
+      margin: -5px 0 0;
+    }
+
+    .my-cta-button {
+      background: #f9f9f9;
+      border: 2px solid #000000;
+      border-radius: 1000px;
+      box-shadow: 3px 3px #8c8c8c;
+      margin-top: 10px;
+      padding: 10px 36px;
+      color: #000000;
+      display: inline-block;
+      font: italic bold 20px/1 "Calibri", sans-serif;
+      text-align: center;
+    }
+
+    .my-cta-button:hover {
+      color: #000000;
+      border: 2px solid #ffffff;
+    }
+
+    .my-cta-button:active {
+      box-shadow: 0 0;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+
+      .col-25,
+      .col-75,
+      input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+    }
+  </style>
+
+  <meta charset="utf-8">
+  <title>Stroke Prediction</title>
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <script>
+    function onlyNumberKey(evt) {
+      var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+      if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+        return false;
+      return true;
+    }
+  </script>
+
+</head>
+
+<body>
+  <center>
+    <div class="title_container">
+      <h2 class='container-heading'><span class="heading_font">Stroke Prediction</span></h2>
+      <div class='description'>
+        <p>A Machine Learning Web App to Predict Stroke</p>
+      </div>
+    </div>
+  </center>
+  <br><br>
+  <div class="container"
+    style="background-image: url('https://i1.wp.com/www.csscodelab.com/wp-content/uploads/2020/03/html-background-color-gradient-css-animation.png?fit=1059%2C694&ssl=1')">
+    <form action="/result" method="POST">
+      <div class="row">
+        <div class="col-25">
+          <label for="gender">Gender</label>
+        </div>
+        <div class="col-75">
+          <select id="gender" name="gender">
+            <option>Select</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="age" font-family:'Roboto Slab'>Age</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="age" name="age" min="3" step="1" onkeypress="return onlyNumberKey(event)"
+            placeholder="Enter your age">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="hypert">Hypertension</label>
+        </div>
+        <div class="col-75">
+          <select id="hypert" name="hypert">
+            <option>Select</option>
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="heart_d">Heart Disease</label>
+        </div>
+        <div class="col-75">
+          <select id="heart_d" name="heart_d">
+            <option>Select</option>
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="martial_stat">Marital Status</label>
+        </div>
+        <div class="col-75">
+          <select id="martial_stat" name="martial_stat">
+            <option>Select</option>
+            <option value="No">Single or Divorced</option>
+            <option value="Yes">Married</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="w_class">Work Type</label>
+        </div>
+        <div class="col-75">
+          <select id="w_class" name="w_class">
+            <option>Select</option>
+            <option value="Self-employed">Self Employed</option>
+            <option value="Govt_job">Government Job</option>
+            <option value="Private">Private</option>
+            <option value="Never_worked">Never Worked</option>
+            <option value="children">Children</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="resident">Residence Type</label>
+        </div>
+        <div class="col-75">
+          <select id="resident" name="resident">
+            <option>Select</option>
+            <option value="Urban">Urban</option>
+            <option value="Rural">Ruler</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="avg_gl">Glucose Level (mg/dl)</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="avg_gl" name="avg_gl" placeholder="Between 50 and 300">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="c_loss">Body Mass Index</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="c_loss" name="c_loss" placeholder="Between 5 and 100">
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="smoking">Smoking Status</label>
+        </div>
+        <div class="col-75">
+          <select id="smoking" name="smoking">
+            <option>Select</option>
+            <option value="formerly smoked">Formerly Smoked</option>
+            <option value="never smoked">Never Smoked</option>
+            <option value="smokes">Smokes</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <center>
+        <div class="row">
+          <input type="submit" class="my-cta-button" value="Predict">
+        </div>
+      </center>
+    </form>
+
+
+  </div>
+</body>
+
+</html>
