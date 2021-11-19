@@ -19,7 +19,23 @@
       display: inline-block;
     }
 
-
+    input[type=text], select, textarea{
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    
+    input[type=number], select, textarea{
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
 
     /* Style the container */
     .container {
@@ -167,8 +183,8 @@
           <label for="gender">Gender</label>
         </div>
         <div class="col-75">
-          <select id="gender" name="gender">
-            <option>Select</option>
+          <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select</option>
             <option value="Female">Female</option>
             <option value="Male">Male</option>
             <option value="Other">Other</option>
@@ -181,8 +197,7 @@
           <label for="age" font-family:'Roboto Slab'>Age</label>
         </div>
         <div class="col-75">
-          <input type="text" id="age" name="age" min="3" step="1" onkeypress="return onlyNumberKey(event)"
-            placeholder="Enter your age">
+          <input type="number" id="age" name="age" placeholder="Between 1 and 100" min="1" max="100" onkeypress="return onlyNumberKey(event)" pattern="^[/d+]/d*$" required>
         </div>
       </div>
 
@@ -191,8 +206,8 @@
           <label for="hypert">Hypertension</label>
         </div>
         <div class="col-75">
-          <select id="hypert" name="hypert">
-            <option>Select</option>
+          <select id="hypert" name="hypert" required>
+            <option value="" disabled selected>Select</option>
             <option value="0">Yes</option>
             <option value="1">No</option>
           </select>
@@ -204,8 +219,8 @@
           <label for="heart_d">Heart Disease</label>
         </div>
         <div class="col-75">
-          <select id="heart_d" name="heart_d">
-            <option>Select</option>
+          <select id="heart_d" name="heart_d" required>
+            <option value="" disabled selected>Select</option>
             <option value="0">Yes</option>
             <option value="1">No</option>
           </select>
@@ -217,8 +232,8 @@
           <label for="martial_stat">Marital Status</label>
         </div>
         <div class="col-75">
-          <select id="martial_stat" name="martial_stat">
-            <option>Select</option>
+          <select id="martial_stat" name="martial_stat" required>
+            <option value="" disabled selected>Select</option>
             <option value="No">Single or Divorced</option>
             <option value="Yes">Married</option>
           </select>
@@ -230,8 +245,8 @@
           <label for="w_class">Work Type</label>
         </div>
         <div class="col-75">
-          <select id="w_class" name="w_class">
-            <option>Select</option>
+          <select id="w_class" name="w_class" required>
+            <option value="" disabled selected>Select</option>
             <option value="Self-employed">Self Employed</option>
             <option value="Govt_job">Government Job</option>
             <option value="Private">Private</option>
@@ -246,10 +261,10 @@
           <label for="resident">Residence Type</label>
         </div>
         <div class="col-75">
-          <select id="resident" name="resident">
-            <option>Select</option>
+          <select id="resident" name="resident" required>
+            <option value="" disabled selected>Select</option>
             <option value="Urban">Urban</option>
-            <option value="Rural">Rular</option>
+            <option value="Rural">Rural</option>
           </select>
         </div>
       </div>
@@ -259,7 +274,7 @@
           <label for="avg_gl">Glucose Level (mg/dl)</label>
         </div>
         <div class="col-75">
-          <input type="text" id="avg_gl" name="avg_gl" placeholder="Between 50 and 300">
+          <input type="number" id="avg_gl" name="avg_gl" placeholder="Between 50 and 300" min="50" max="300" pattern="^[/d+]/d*$" required>
         </div>
       </div>
 
@@ -268,8 +283,7 @@
           <label for="c_loss">Body Mass Index</label>
         </div>
         <div class="col-75">
-          <input type="text" id="c_loss" name="c_loss" placeholder="Between 5 and 100">
-
+          <input type="number" id="c_loss" name="c_loss" placeholder="Between 5 and 100" min="5" max="100" pattern="^[/d+]/d*$" required>
         </div>
       </div>
 
@@ -278,8 +292,8 @@
           <label for="smoking">Smoking Status</label>
         </div>
         <div class="col-75">
-          <select id="smoking" name="smoking">
-            <option>Select</option>
+          <select id="smoking" name="smoking" required>
+            <option value="" disabled selected>Select</option>
             <option value="formerly smoked">Formerly Smoked</option>
             <option value="never smoked">Never Smoked</option>
             <option value="smokes">Smokes</option>

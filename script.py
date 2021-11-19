@@ -37,9 +37,9 @@ def result():
         result = ValuePredictor(to_predict_list)
 
         if int(result) == 1:
-            prediction = "Chance of getting a stroke"
+            prediction = "Please consult a doctor. Based on your inputs you are likely to get stroke."
         else:
-            prediction = "Not a chance of getting stroke for now"
+            prediction = "Congratulations! Based on your inputs you are not likely to get a stroke."
 
         return flask.render_template("result.html", prediction=prediction)
 
