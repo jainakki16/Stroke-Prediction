@@ -1,12 +1,11 @@
-import os
-import numpy as np
 import flask
-import pickle
-from flask import Flask, render_template, request
+import pandas as pd
+from joblib import load
 
 
 app = flask.Flask(__name__, template_folder='templates')
 app.config["DEBUG"] = True
+
 
 @app.route('/')
 @app.route('/index')
@@ -15,31 +14,34 @@ def index():
 
 
 def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1,10)
-    loaded_model = pickle.load(open("model_final_pkl","rb"))
-    result = loaded_model.predict(to_predict)
+    pipeline = load("stroke_model.joblib")
+    result = pipeline.predict(pd.DataFrame(to_predict_list, index=[0]))
     return result[0]
 
 
-@app.route('/result', methods = ['POST'])
+@app.route('/result', methods=['POST'])
 def result():
-    if request.method == 'POST':
-        to_predict_list = request.form.to_dict()
-        
-        to_predict_list['age'] = int(to_predict_list['age'])
-        to_predict_list['hypert'] = int(to_predict_list['hypert'])
-        to_predict_list['heart_d'] = int(to_predict_list['heart_d'])
-        to_predict_list['avg_gl'] = int(to_predict_list['avg_gl'])
-        to_predict_list['c_loss'] = int(to_predict_list['c_loss'])
+    if flask.request.method == 'POST':
+        to_predict_list = flask.request.form.to_dict()
 
-        to_predict_list=list(to_predict_list.values())
+        to_predict_list['marital_status'] = to_predict_list.pop('martial_stat')
+        to_predict_list['work_type'] = to_predict_list.pop('w_class')
+        to_predict_list['residence_type'] = to_predict_list.pop('resident')
+        to_predict_list['smoking_status'] = to_predict_list.pop('smoking')
+        to_predict_list['age'] = int(to_predict_list.pop('age'))
+        to_predict_list['hypertension'] = int(to_predict_list.pop('hypert'))
+        to_predict_list['heart_disease'] = int(to_predict_list.pop('heart_d'))
+        to_predict_list['avg_glucose_level'] = int(to_predict_list.pop('avg_gl'))
+        to_predict_list['bmi'] = int(to_predict_list.pop('c_loss'))
+
         result = ValuePredictor(to_predict_list)
-        
-        if int(result)==1:
-            prediction='chance of getting stroke'
+
+        if int(result) == 1:
+            prediction = "Chance of getting a stroke"
         else:
-            prediction='Not a chance of getting stroke for now'
-            
-        return render_template("result.html",prediction=to_predict_list)
+            prediction = "Not a chance of getting stroke for now"
+
+        return flask.render_template("result.html", prediction=prediction)
+
 
 app.run()
