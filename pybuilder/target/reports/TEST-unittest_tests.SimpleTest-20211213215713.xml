@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unittest_tests.SimpleTest-20211213215713" tests="1" file="unittest_tests.py" time="0.009" timestamp="2021-12-13T21:57:15" failures="0" errors="1" skipped="0">
+	<testcase classname="unittest_tests.SimpleTest" name="testadd1" time="0.009" timestamp="2021-12-13T21:57:15">
+		<error type="FileNotFoundError" message="[Errno 2] No such file or directory: '..\\..\\..\\..\\stroke_model.joblib'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 592, in run
+    self._callTestMethod(testMethod)
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 550, in _callTestMethod
+    method()
+  File "c:\users\aksha\desktop\stroke-prediction\pybuilder\src\unittest\python\unittest_tests.py", line 21, in testadd1
+    self.assertEquals(predict_stroke(case_1), "Congratulations! Based on your inputs you are not likely to get a stroke.")
+  File "c:\users\aksha\desktop\stroke-prediction\pybuilder\src\main\python\demo.py", line 6, in predict_stroke
+    pipeline = load("..\..\..\..\stroke_model.joblib")
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\site-packages\joblib\numpy_pickle.py", line 579, in load
+    with open(filename, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '..\\..\\..\\..\\stroke_model.joblib'
+]]></error>
+	</testcase>
+</testsuite>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unittest_tests.SimpleTest-20211213211614" tests="1" file="unittest_tests.py" time="1.800" timestamp="2021-12-13T21:16:17" failures="0" errors="1" skipped="0">
+	<testcase classname="unittest_tests.SimpleTest" name="testadd1" time="1.800" timestamp="2021-12-13T21:16:17">
+		<error type="ValueError" message="Shape of passed values is (10, 1), indices imply (1, 1)"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 592, in run
+    self._callTestMethod(testMethod)
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 550, in _callTestMethod
+    method()
+  File "c:\users\aksha\desktop\stroke-prediction\pybuilder\src\unittest\python\unittest_tests.py", line 9, in testadd1
+    self.assertEquals(predict_stroke(['Male', 45, '0', '1', 'No', 'Private', 'Urban', 51, 6, 'smokes']), "Please consult a doctor. Based on your inputs you are likely to get stroke.")
+  File "c:\users\aksha\desktop\stroke-prediction\pybuilder\src\main\python\demo.py", line 7, in predict_stroke
+    result = pipeline.predict(pd.DataFrame(predict_list, index=[0]))[0]
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\frame.py", line 584, in __init__
+    mgr = init_ndarray(data, index, columns, dtype=dtype, copy=copy)
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\internals\construction.py", line 238, in init_ndarray
+    return create_block_manager_from_blocks(block_values, [columns, index])
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\internals\managers.py", line 1687, in create_block_manager_from_blocks
+    raise construction_error(tot_items, blocks[0].shape[1:], axes, e)
+ValueError: Shape of passed values is (10, 1), indices imply (1, 1)
+]]></error>
+	</testcase>
+</testsuite>

@@ -1,0 +1,32 @@
+{
+  "module_names": [
+    {
+      "branches": 2,
+      "branches_missing": 1,
+      "branches_partial": 1,
+      "coverage": 90.9090909090909,
+      "lines": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        14,
+        16
+      ],
+      "lines_not_covered": [
+        12
+      ],
+      "module": "demo",
+      "sum_lines": 11,
+      "sum_lines_not_covered": 1
+    }
+  ],
+  "overall_branch_coverage": 50.0,
+  "overall_branch_partial_coverage": 50.0,
+  "overall_coverage": 90.9090909090909
+}

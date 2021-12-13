@@ -1,0 +1,42 @@
+running clean
+'build\temp.win-amd64-3.9' does not exist -- can't clean it
+'build\lib' does not exist -- can't clean it
+'build\bdist.win-amd64' does not exist -- can't clean it
+'build\scripts-3.9' does not exist -- can't clean it
+running sdist
+running egg_info
+creating pybuilder.egg-info
+writing pybuilder.egg-info\PKG-INFO
+writing dependency_links to pybuilder.egg-info\dependency_links.txt
+writing namespace_packages to pybuilder.egg-info\namespace_packages.txt
+writing top-level names to pybuilder.egg-info\top_level.txt
+writing manifest file 'pybuilder.egg-info\SOURCES.txt'
+reading manifest file 'pybuilder.egg-info\SOURCES.txt'
+writing manifest file 'pybuilder.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+warning: Check: missing required meta-data: url
+
+warning: Check: missing meta-data: either (author and author_email) or (maintainer and maintainer_email) should be supplied
+
+creating pybuilder-1.0.dev0
+creating pybuilder-1.0.dev0\pybuilder.egg-info
+copying files to pybuilder-1.0.dev0...
+copying demo.py -> pybuilder-1.0.dev0
+copying setup.py -> pybuilder-1.0.dev0
+copying pybuilder.egg-info\PKG-INFO -> pybuilder-1.0.dev0\pybuilder.egg-info
+copying pybuilder.egg-info\SOURCES.txt -> pybuilder-1.0.dev0\pybuilder.egg-info
+copying pybuilder.egg-info\dependency_links.txt -> pybuilder-1.0.dev0\pybuilder.egg-info
+copying pybuilder.egg-info\namespace_packages.txt -> pybuilder-1.0.dev0\pybuilder.egg-info
+copying pybuilder.egg-info\top_level.txt -> pybuilder-1.0.dev0\pybuilder.egg-info
+copying pybuilder.egg-info\zip-safe -> pybuilder-1.0.dev0\pybuilder.egg-info
+not copying pybuilder.egg-info\SOURCES.txt (output up-to-date)
+Reading configuration from pybuilder-1.0.dev0\setup.cfg
+Adding new section [egg_info] to pybuilder-1.0.dev0\setup.cfg
+Setting egg_info.tag_build to '' in pybuilder-1.0.dev0\setup.cfg
+Setting egg_info.tag_date to 0 in pybuilder-1.0.dev0\setup.cfg
+Writing pybuilder-1.0.dev0\setup.cfg
+creating dist
+Creating tar archive
+removing 'pybuilder-1.0.dev0' (and everything under it)

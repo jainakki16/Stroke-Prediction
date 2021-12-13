@@ -1,0 +1,8 @@
+demo.py
+setup.py
+pybuilder.egg-info/PKG-INFO
+pybuilder.egg-info/SOURCES.txt
+pybuilder.egg-info/dependency_links.txt
+pybuilder.egg-info/namespace_packages.txt
+pybuilder.egg-info/top_level.txt
+pybuilder.egg-info/zip-safe

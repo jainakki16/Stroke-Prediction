@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unittest_tests.SimpleTest-20211213224836" tests="1" file="unittest_tests.py" time="0.800" timestamp="2021-12-13T22:48:39" failures="0" errors="1" skipped="0">
+	<testcase classname="unittest_tests.SimpleTest" name="testadd1" time="0.800" timestamp="2021-12-13T22:48:39">
+		<error type="ValueError" message="If using all scalar values, you must pass an index"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 592, in run
+    self._callTestMethod(testMethod)
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 550, in _callTestMethod
+    method()
+  File "c:\users\aksha\desktop\stroke-prediction\pybuilder\src\unittest\python\unittest_tests.py", line 21, in testadd1
+    self.assertEquals(predict_stroke(case_1), "Congratulations! Based on your inputs you are not likely to get a stroke.")
+  File "c:\users\aksha\desktop\stroke-prediction\pybuilder\src\main\python\demo.py", line 9, in predict_stroke
+    result = pipeline.predict(pd.DataFrame(predict_list), index=[0])[0]
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\frame.py", line 529, in __init__
+    mgr = init_dict(data, index, columns, dtype=dtype)
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\internals\construction.py", line 287, in init_dict
+    return arrays_to_mgr(arrays, data_names, index, columns, dtype=dtype)
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\internals\construction.py", line 80, in arrays_to_mgr
+    index = extract_index(arrays)
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\core\internals\construction.py", line 391, in extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+]]></error>
+	</testcase>
+</testsuite>
