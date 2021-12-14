@@ -8,7 +8,7 @@ running build
 running build_py
 creating build
 creating build\lib
-copying demo.py -> build\lib
+copying script_test.py -> build\lib
 c:\users\aksha\desktop\stroke-prediction\pybuilder\.pybuilder\plugins\cpython-3.9.7.final.0\lib\site-packages\setuptools\command\install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
   warnings.warn(
 installing to build\bdist.win-amd64\wheel
@@ -16,7 +16,7 @@ running install
 running install_lib
 creating build\bdist.win-amd64
 creating build\bdist.win-amd64\wheel
-copying build\lib\demo.py -> build\bdist.win-amd64\wheel\.
+copying build\lib\script_test.py -> build\bdist.win-amd64\wheel\.
 running install_egg_info
 running egg_info
 writing pybuilder.egg-info\PKG-INFO
@@ -35,7 +35,7 @@ Copying zip-safe to build\bdist.win-amd64\wheel\.\pybuilder-1.0.dev0-py3.9.egg-i
 running install_scripts
 creating build\bdist.win-amd64\wheel\pybuilder-1.0.dev0.dist-info\WHEEL
 creating 'dist\pybuilder-1.0.dev0-py3-none-any.whl' and adding 'build\bdist.win-amd64\wheel' to it
-adding 'demo.py'
+adding 'script_test.py'
 adding 'pybuilder-1.0.dev0.dist-info/METADATA'
 adding 'pybuilder-1.0.dev0.dist-info/WHEEL'
 adding 'pybuilder-1.0.dev0.dist-info/namespace_packages.txt'

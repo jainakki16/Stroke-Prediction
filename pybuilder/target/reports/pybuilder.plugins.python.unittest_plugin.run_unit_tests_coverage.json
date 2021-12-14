@@ -9,19 +9,19 @@
         1,
         2,
         3,
-        6,
         7,
         8,
-        9,
+        10,
         11,
-        12,
+        13,
         14,
-        16
+        16,
+        18
       ],
       "lines_not_covered": [
-        12
+        14
       ],
-      "module": "demo",
+      "module": "script_test",
       "sum_lines": 11,
       "sum_lines_not_covered": 1
     }

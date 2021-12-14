@@ -23,7 +23,7 @@ warning: Check: missing meta-data: either (author and author_email) or (maintain
 creating pybuilder-1.0.dev0
 creating pybuilder-1.0.dev0\pybuilder.egg-info
 copying files to pybuilder-1.0.dev0...
-copying demo.py -> pybuilder-1.0.dev0
+copying script_test.py -> pybuilder-1.0.dev0
 copying setup.py -> pybuilder-1.0.dev0
 copying pybuilder.egg-info\PKG-INFO -> pybuilder-1.0.dev0\pybuilder.egg-info
 copying pybuilder.egg-info\SOURCES.txt -> pybuilder-1.0.dev0\pybuilder.egg-info

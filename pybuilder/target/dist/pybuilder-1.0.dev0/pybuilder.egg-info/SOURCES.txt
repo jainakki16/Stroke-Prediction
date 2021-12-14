@@ -1,4 +1,4 @@
-demo.py
+script_test.py
 setup.py
 pybuilder.egg-info/PKG-INFO
 pybuilder.egg-info/SOURCES.txt
