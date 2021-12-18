@@ -14,3 +14,18 @@ jobs:
       - run: cd pybuilder && pyb -v
 #       - run: python3 script.py
  
+      - name: send mail
+        if: ${{ failure() }}
+        uses: devellany/send-mail@v1.0.2
+        with:
+          host: smtp.gmail.com
+          port: 465
+          contentType: text/plain
+          account: ${{secrets.EMAIL}}
+          password: ${{secrets.PASSWORD}}
+          sender: Github Actions
+          from: ${{secrets.EMAIL}}
+          to: akshat.jain18@st.niituniversity.in, dishank.kalra18@st.niituniversity.in, avinash.patil18@st.niituniversity.in
+          subject: Github workflow failed
+          body: Your github work failed.
+          attachments: '[{}]'
