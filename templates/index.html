@@ -1,315 +1,125 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <style>
-    input[type=text],
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      resize: vertical;
-    }
 
-    /* Style the label to display next to the inputs */
-    label {
-      padding: 12px 12px 12px 0;
-      display: inline-block;
-    }
+     <title>Stroke Prediction</title>
 
-    input[type=text], select, textarea{
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      resize: vertical;
-    }
-    
-    input[type=number], select, textarea{
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      resize: vertical;
-    }
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <link href="assets/images/favicon.png" rel="icon">
+     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+     <link rel="stylesheet" href="assets/css/aos.css">
+     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
 
-    /* Style the container */
-    .container {
-      margin: auto;
-      border-radius: 5px;
-      padding: 40px 40px 10px 40px;
-      width: 80%;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-    /* Floating column for labels: 25% width */
-    .col-25 {
-      float: left;
-      width: 25%;
-      margin-top: 6px;
-      font-family: Comic Sans MS;
-      font-size: 16px;
-    }
-
-    /* Floating column for inputs: 75% width */
-    .col-75 {
-      float: left;
-      width: 75%;
-      margin-top: 6px;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    .title_container {
-      padding: 30px;
-      position: relative;
-      background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
-      background-size: 500% 500%;
-      animation: change-gradient 10s ease-in-out infinite;
-    }
-
-    @keyframes change-gradient {
-      0% {
-        background-position: 0 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0 50%;
-      }
-    }
-
-    .container-heading {
-      margin: 0;
-    }
-
-    .heading_font {
-      color: #ffffff;
-      font-family: 'Pacifico', cursive;
-      font-size: 35px;
-      font-weight: normal;
-    }
-
-    .description p {
-      color: #ffffff;
-      font-style: italic;
-      font-size: 14px;
-      margin: -5px 0 0;
-    }
-
-    .my-cta-button {
-      background: #f9f9f9;
-      border: 2px solid #000000;
-      border-radius: 1000px;
-      box-shadow: 3px 3px #8c8c8c;
-      margin-top: 10px;
-      padding: 10px 36px;
-      color: #000000;
-      display: inline-block;
-      font: italic bold 20px/1 "Calibri", sans-serif;
-      text-align: center;
-    }
-
-    .my-cta-button:hover {
-      color: #000000;
-      border: 2px solid #ffffff;
-    }
-
-    .my-cta-button:active {
-      box-shadow: 0 0;
-    }
-
-    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-      .col-25,
-      .col-75,
-      input[type=submit] {
-        width: 100%;
-        margin-top: 0;
-      }
-
-      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-
-    }
-  </style>
-
-  <meta charset="utf-8">
-  <title>Stroke Prediction</title>
-  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-
-  <script>
-    function onlyNumberKey(evt) {
-      var ASCIICode = (evt.which) ? evt.which : evt.keyCode
-      if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
-        return false;
-      return true;
-    }
-  </script>
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="assets/css/templatemo-digital-trend.css">
 
 </head>
-
 <body>
-  <center>
-    <div class="title_container">
-      <h2 class='container-heading'><span class="heading_font">Stroke Prediction</span></h2>
-      <div class='description'>
-        <p>A Machine Learning Web App to Predict Stroke</p>
-      </div>
-    </div>
-  </center>
-  <br><br>
-  <div class="container"
-    style="background-image: url('https://i1.wp.com/www.csscodelab.com/wp-content/uploads/2020/03/html-background-color-gradient-css-animation.png?fit=1059%2C694&ssl=1'); background-repeat: no-repeat; background-size: cover;">
-    <form action="/result" method="POST">
-      <div class="row">
-        <div class="col-25">
-          <label for="gender">Gender</label>
-        </div>
-        <div class="col-75">
-          <select id="gender" name="gender" required>
-            <option value="" disabled selected>Select</option>
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-25">
-          <label for="age" font-family:'Roboto Slab'>Age</label>
+     <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+               <i class="fa fa-line-chart"></i>
+               Stroke Prediction
+             </a>
+   
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                 aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+   
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                         <a href="{{url_for('index')}}" class="nav-link active">Home</a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="{{url_for('insight')}}" class="nav-link">Our Work</a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="{{url_for('pred')}}" class="nav-link ">Make prediction</a>
+                     </li>
+                  
+                     <li class="nav-item">
+                       <a href="{{url_for('team')}}" class="nav-link">Our Team</a>
+                     </li> 
+                </ul>
+            </div>
         </div>
-        <div class="col-75">
-          <input type="number" id="age" name="age" placeholder="Between 1 and 100" min="1" max="100" onkeypress="return onlyNumberKey(event)" pattern="^[/d+]/d*$" required>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-25">
-          <label for="hypert">Hypertension</label>
-        </div>
-        <div class="col-75">
-          <select id="hypert" name="hypert" required>
-            <option value="" disabled selected>Select</option>
-            <option value="0">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-25">
-          <label for="heart_d">Heart Disease</label>
-        </div>
-        <div class="col-75">
-          <select id="heart_d" name="heart_d" required>
-            <option value="" disabled selected>Select</option>
-            <option value="0">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-25">
-          <label for="martial_stat">Marital Status</label>
-        </div>
-        <div class="col-75">
-          <select id="martial_stat" name="martial_stat" required>
-            <option value="" disabled selected>Select</option>
-            <option value="No">Single or Divorced</option>
-            <option value="Yes">Married</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-25">
-          <label for="w_class">Work Type</label>
-        </div>
-        <div class="col-75">
-          <select id="w_class" name="w_class" required>
-            <option value="" disabled selected>Select</option>
-            <option value="Self-employed">Self Employed</option>
-            <option value="Govt_job">Government Job</option>
-            <option value="Private">Private</option>
-            <option value="Never_worked">Never Worked</option>
-            <option value="children">Children</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-25">
-          <label for="resident">Residence Type</label>
-        </div>
-        <div class="col-75">
-          <select id="resident" name="resident" required>
-            <option value="" disabled selected>Select</option>
-            <option value="Urban">Urban</option>
-            <option value="Rural">Rural</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-25">
-          <label for="avg_gl">Glucose Level (mg/dl)</label>
-        </div>
-        <div class="col-75">
-          <input type="number" id="avg_gl" name="avg_gl" placeholder="Between 50 and 300" min="50" max="300" pattern="^[/d+]/d*$" required>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-25">
-          <label for="c_loss">Body Mass Index</label>
-        </div>
-        <div class="col-75">
-          <input type="number" id="c_loss" name="c_loss" placeholder="Between 5 and 100" min="5" max="100" pattern="^[/d+]/d*$" required>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-25">
-          <label for="smoking">Smoking Status</label>
-        </div>
-        <div class="col-75">
-          <select id="smoking" name="smoking" required>
-            <option value="" disabled selected>Select</option>
-            <option value="formerly smoked">Formerly Smoked</option>
-            <option value="never smoked">Never Smoked</option>
-            <option value="smokes">Smokes</option>
-          </select>
-        </div>
-      </div>
-      <br>
-      <center>
-        <div class="row">
-          <input type="submit" class="my-cta-button" value="Predict">
-        </div>
-      </center>
-    </form>
+    </nav>
 
 
-  </div>
+     <!-- HERO -->
+     <section class="hero hero-bg d-flex justify-content-center align-items-center">
+               <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-10 col-12 d-flex flex-column justify-content-center align-items-center">
+                              <div class="hero-text">
+
+                                   <h1 class="text-white" data-aos="fade-up">We are ready for your quick Health check up</h1>
+
+                                   <a href="{{url_for('pred')}}" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Make prediction</a>
+
+                                   
+                              </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                          <div class="hero-image" data-aos="fade-up" data-aos-delay="300">
+
+                            <img src="assets/images/working-girl.png" class="img-fluid" alt="working girl">
+                          </div>
+                        </div>
+
+                    </div>
+               </div>
+     </section>
+
+
+     <!-- ABOUT -->
+     <section class="about section-padding pb-0" id="about">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-lg-7 mx-auto col-md-10 col-12">
+                         <div class="about-info">
+
+                              <h2 class="mb-4" data-aos="fade-up">What is <strong>Stroke</strong> ?</h2>
+
+                              <p class="mb-0" data-aos="fade-up">A stroke happens when the blood vessels in the brain either become <strong> clogged or burst</strong>, leading to loss of functionality of our body parts.  
+                              <br><br>Stroke is the leading cause of premature death and in <strong> every 4 minutes </strong> someone dies of a stroke but <strong> upto 80% </strong> of stroke can be prevented if silent stroke is diagnosed early. </p>
+                         </div>
+
+                         <div class="about-image" data-aos="fade-up" data-aos-delay="200">
+
+                          <img src="assets/images/hospital2.png" class="img-fluid" alt="office">
+                        </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+  
+
+
+     <!-- SCRIPTS -->
+     <script src="assets/js/jquery.min.js"></script>
+     <script src="assets/js/bootstrap.min.js"></script>
+     <script src="assets/js/aos.js"></script>
+     <script src="assets/js/owl.carousel.min.js"></script>
+     <script src="assets/js/smoothscroll.js"></script>
+     <script src="assets/js/custom.js"></script>
+
 </body>
-
 </html>

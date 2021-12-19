@@ -1,16 +1,30 @@
 import flask
 import pandas as pd
 from joblib import load
+from flask import url_for
 
 
-app = flask.Flask(__name__, template_folder='templates')
-app.config["DEBUG"] = True
+app = flask.Flask(__name__, static_folder='assets', template_folder='templates')
+app.config["DEBUG"] = False
 
 
 @app.route('/')
 @app.route('/index')
 def index():
     return flask.render_template('index.html')
+
+@app.route('/insight')
+def insight():
+    return flask.render_template('insight.html')
+
+@app.route('/contact')
+def contact():
+    return flask.render_template('contact.html')
+
+@app.route('/team')
+def team():
+    return flask.render_template('team.html')
+
 
 
 def ValuePredictor(to_predict_list):
@@ -19,12 +33,16 @@ def ValuePredictor(to_predict_list):
     return result[0]
 
 
-@app.route('/result', methods=['POST'])
-def result():
+@app.route('/pred', methods=['GET','POST'])
+def pred():
+    return flask.render_template('pred.html')
+
+@app.route('/upload', methods=['GET','POST'])   
+def upload():
     if flask.request.method == 'POST':
         to_predict_list = flask.request.form.to_dict()
 
-        to_predict_list['marital_status'] = to_predict_list.pop('martial_stat')
+        to_predict_list['marital_status'] = to_predict_list.pop('marital')
         to_predict_list['work_type'] = to_predict_list.pop('w_class')
         to_predict_list['residence_type'] = to_predict_list.pop('resident')
         to_predict_list['smoking_status'] = to_predict_list.pop('smoking')
@@ -37,11 +55,13 @@ def result():
         result = ValuePredictor(to_predict_list)
 
         if int(result) == 1:
+         
             prediction = "Please consult a doctor. Based on your inputs you are likely to get stroke."
         else:
+            
             prediction = "Congratulations! Based on your inputs you are not likely to get a stroke."
 
-        return flask.render_template("result.html", prediction=prediction)
+        return flask.render_template("pred.html", prediction=prediction)
 
 
-app.run()
+app.run(host="0.0.0.0")
