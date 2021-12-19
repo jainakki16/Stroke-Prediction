@@ -119,3 +119,4 @@ def test_case_3():
     assert result == "Congratulations! Based on your inputs you are not likely to get a stroke."
     time.sleep(1)
     driver.close()
+    
