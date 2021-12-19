@@ -38,16 +38,16 @@ class SimpleTest(unittest.TestCase):
 
 
     def testcase3(self):
-        case_2 = {}
-        case_2['gender'] = 'Female'
-        case_2['age'] = 40
-        case_2['hypertension'] = '1'
-        case_2['heart_disease'] = '0'
-        case_2['marital_status'] = 'Yes'
-        case_2['work_type'] = 'children'
-        case_2['residence_type'] = 'Rural'
-        case_2['avg_glucose_level'] = 190
-        case_2['bmi'] = 10
-        case_2['smoking_status'] = 'formerly smoked'
+        case_3 = {}
+        case_3['gender'] = 'Female'
+        case_3['age'] = 40
+        case_3['hypertension'] = '1'
+        case_3['heart_disease'] = '0'
+        case_3['marital_status'] = 'Yes'
+        case_3['work_type'] = 'children'
+        case_3['residence_type'] = 'Rural'
+        case_3['avg_glucose_level'] = 190
+        case_3['bmi'] = 10
+        case_3['smoking_status'] = 'formerly smoked'
 
-        self.assertEquals(predict_stroke(case_2), "Please consult a doctor. Based on your inputs you are likely to get stroke.")
+        self.assertEquals(predict_stroke(case_3), "Please consult a doctor. Based on your inputs you are likely to get stroke.")
