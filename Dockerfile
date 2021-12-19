@@ -1,5 +1,4 @@
 FROM python:3
-MAINTAINER Avinash
 
 WORKDIR /app
 COPY . /app
