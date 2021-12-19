@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unittest_tests.SimpleTest-20211219173825" tests="3" file="unittest_tests.py" time="0.827" timestamp="2021-12-19T17:38:28" failures="1" errors="0" skipped="0">
+	<testcase classname="unittest_tests.SimpleTest" name="testcase1" time="0.800" timestamp="2021-12-19T17:38:28"/>
+	<testcase classname="unittest_tests.SimpleTest" name="testcase2" time="0.012" timestamp="2021-12-19T17:38:28"/>
+	<testcase classname="unittest_tests.SimpleTest" name="testcase3" time="0.015" timestamp="2021-12-19T17:38:28">
+		<failure type="AssertionError" message="'Congratulations! Based on your inputs you are not likely to get a stroke.' != 'Please consult a doctor. Based on your inputs you are likely to get stroke.'
+- Congratulations! Based on your inputs you are not likely to get a stroke.
++ Please consult a doctor. Based on your inputs you are likely to get stroke.
+"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 592, in run
+    self._callTestMethod(testMethod)
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 550, in _callTestMethod
+    method()
+  File "c:\users\aksha\desktop\stroke-prediction\pybuilder\src\unittest\python\unittest_tests.py", line 53, in testcase3
+    self.assertEquals(predict_stroke(case_2), "Please consult a doctor. Based on your inputs you are likely to get stroke.")
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 1327, in deprecated_func
+    return original_func(*args, **kwargs)
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 829, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 1209, in assertMultiLineEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python39\lib\unittest\case.py", line 668, in fail
+    raise self.failureException(msg)
+AssertionError: 'Congratulations! Based on your inputs you are not likely to get a stroke.' != 'Please consult a doctor. Based on your inputs you are likely to get stroke.'
+- Congratulations! Based on your inputs you are not likely to get a stroke.
++ Please consult a doctor. Based on your inputs you are likely to get stroke.
+
+]]></failure>
+	</testcase>
+</testsuite>

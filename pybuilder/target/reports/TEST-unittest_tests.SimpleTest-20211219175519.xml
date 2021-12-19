@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unittest_tests.SimpleTest-20211219175519" tests="3" file="unittest_tests.py" time="2.889" timestamp="2021-12-19T17:55:25" failures="0" errors="0" skipped="0">
+	<testcase classname="unittest_tests.SimpleTest" name="testcase1" time="2.726" timestamp="2021-12-19T17:55:25"/>
+	<testcase classname="unittest_tests.SimpleTest" name="testcase2" time="0.069" timestamp="2021-12-19T17:55:25"/>
+	<testcase classname="unittest_tests.SimpleTest" name="testcase3" time="0.094" timestamp="2021-12-19T17:55:25"/>
+</testsuite>
