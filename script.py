@@ -14,19 +14,9 @@ app.config["DEBUG"] = False
 def index():
     return flask.render_template('index.html')
 
-@app.route('/insight')
-def insight():
-    return flask.render_template('insight.html')
-
 @app.route('/contact')
 def contact():
     return flask.render_template('contact.html')
-
-@app.route('/team')
-def team():
-    return flask.render_template('team.html')
-
-
 
 def ValuePredictor(to_predict_list):
     pipeline = load("stroke_model.joblib")
